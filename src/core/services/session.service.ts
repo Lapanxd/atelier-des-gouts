@@ -4,25 +4,15 @@ import { ApiResponse } from '../models/api-response.ts';
 import { IAuth } from '../models/auth.model.ts';
 
 export class SessionService {
-  getSessions() {
+  getSessions() {}
 
-  }
+  createSession() {}
 
-  createSession() {
+  updateSession() {}
 
-  }
+  endSession() {}
 
-  updateSession() {
-
-  }
-
-  endSession() {
-
-  }
-
-  deleteSession() {
-
-  }
+  deleteSession() {}
 }
 
 export const sessionService = new SessionService();

@@ -1,8 +1,10 @@
+import { IPhoto } from './photo.model.ts';
+
 export interface IGallery {
   id: string;
   title: string;
   url: string;
-  primaryPhotoId: string;
+  primaryPhoto: IPhoto;
   countPhotos: number;
   createdAt?: Date;
   updatedAt?: Date;
