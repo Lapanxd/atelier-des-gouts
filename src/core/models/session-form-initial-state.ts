@@ -1,4 +1,5 @@
 import { Nullable } from '../types/nullable.ts';
+import { IGallery } from './gallery.model.ts';
 
 export interface ISessionFormInitialState {
   clients: {
@@ -6,6 +7,7 @@ export interface ISessionFormInitialState {
     firstname: string;
     lastname: string;
   }[];
-  gallery: Nullable<string>;
+  gallery: Nullable<IGallery>;
   formStep: number;
+  duoImages: [string, string][];
 }

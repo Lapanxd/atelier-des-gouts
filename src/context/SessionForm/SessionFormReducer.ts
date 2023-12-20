@@ -4,7 +4,17 @@ import { ISessionFormInitialState } from '../../core/models/session-form-initial
 export const sessionFormInitialState: ISessionFormInitialState = {
   clients: [],
   gallery: null,
-  formStep: 1,
+  formStep: 2,
+  duoImages: [
+    [
+      'https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630',
+      'https://img.freepik.com/photos-gratuite/peinture-lac-montagne-montagne-arriere-plan_188544-9126.jpg',
+    ],
+    [
+      'https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630',
+      'https://img.freepik.com/photos-gratuite/peinture-lac-montagne-montagne-arriere-plan_188544-9126.jpg',
+    ],
+  ],
 };
 
 export function sessionFormReducer(state, action) {
