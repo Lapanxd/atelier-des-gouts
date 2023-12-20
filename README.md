@@ -1,39 +1,37 @@
-# React + TypeScript + Vite
+# Digitalisation atelier des goûts
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Objectif du projet 🏠
 
-Currently, two official plugins are available:
+L'atelier des goûts permet aux architects de chez [Ouvrage](https://www.ouvrage.eu/) de définir les goûts d'un client (
+parfois même de leur faire découvrir).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
-  uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast
-  Refresh
+L'idée derrière ce projet est de transcrire de manière digitale cet atelier des goûts
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+@todo
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked`
-  or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and
-  add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Améliorations futures (v2, v3, v18? 👀)
 
-## Améliorations prévues
+### Réelle digitalisation de l'atelier
 
-- Connecter **son propre** compte flickr pour récupérer **ses** galleries
-- Tous les @todo dans le code :)
+L'idée serait de ne pas seulement faire une "transcription" de manière digitale mais plutôt de créer une **expérience**
+avec une petite inspiration de ce qui a été fait pour
+le [test du choixpeau](https://www.wizardingworld.com/sorting-hat).
+
+### Côté back
+
+- Faire un vrai backend plutôt qu'utiliser un CMS headless (pas assez modelable)
+- Algo qui calculerait/interpreterait les résultats en fonction de toutes les règles/paramètres qu'un architect
+  pourrait prendre en compte (gros travail là dessus)
+- Peut être partir sur une db mongo pour pouvoir mettre des résultats "en vrac" et manipuler du json facilement
+
+### Côté front
+
+Pour pouvoir vraiment créer une expérience dont on pourrait se souvenir il faut une interface qui sort de l'ordinaire.
+
+- Pourquoi pas partir sur Nextjs (voir si il y a réellement un intérêt)
+- (soyons fous) Intégrer [Three.js](https://threejs.org/) et/ou [Gsap](https://gsap.com/) pour créer une expérience
+  unique

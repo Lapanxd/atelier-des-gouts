@@ -21,7 +21,7 @@ class FlickrService {
 
   // @todo typer le retour de la méthode
   // à voir si cette méthode est utile
-  async getGalleriePhotos(galleryId: string) {
+  async getGalleryPhotos(galleryId: string) {
     // @todo mettre dans le .env le user_id
     return await this.flickr('flickr.galleries.getPhotos', {
       gallery_id: galleryId,

@@ -29,8 +29,6 @@ export class FlickrAdapter {
         thumbnailUrl: image.apiData.sizes.size.find((size) => size.label === 'Thumbnail').source,
       };
 
-      console.log('adapter', test);
-
       return test;
     }
   }

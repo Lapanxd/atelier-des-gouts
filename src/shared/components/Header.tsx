@@ -7,7 +7,7 @@ export const Header = () => {
 
   return (
     <>
-      <div className="navbar p-3 rounded-lg">
+      <div className="navbar p-3">
         <div className="flex-1">
           <a className="text-xl font-semibold">Atelier des goûts</a>
         </div>
