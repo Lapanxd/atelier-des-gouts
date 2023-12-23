@@ -23,9 +23,11 @@ class FlickrService {
   // à voir si cette méthode est utile
   async getGalleryPhotos(galleryId: string) {
     // @todo mettre dans le .env le user_id
-    return await this.flickr('flickr.galleries.getPhotos', {
+    const response = await this.flickr('flickr.galleries.getPhotos', {
       gallery_id: galleryId,
     });
+
+    return flickrAdapter.adaptFlickrGallery(response);
   }
 
   // @todo voir si on peut pas récupérer les infos de toutes les photo d'un coup plutôt que fait 12000000 appels API

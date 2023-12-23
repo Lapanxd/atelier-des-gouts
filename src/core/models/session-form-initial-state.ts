@@ -9,5 +9,8 @@ export interface ISessionFormInitialState {
   }[];
   gallery: Nullable<IGallery>;
   formStep: number;
-  duoImages: [string, string][];
+  duoImages: Nullable<{
+    id: number;
+    urls: [string, string];
+  }[]>;
 }

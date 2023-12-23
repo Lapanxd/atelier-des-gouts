@@ -36,13 +36,13 @@ const CreateSession = () => {
   return (
     <>
       <Header />
-      <h1 className='font-bold text-3xl mt-10 mb-10'>Créer une nouvelle session</h1>
+      <h1 className="font-bold text-3xl mt-10 mb-10">Créer une nouvelle session</h1>
       <SessionFormProvider>
-        <div className='flex gap-10'>
-          <div className='w-2/6'>
+        <div className="flex gap-10">
+          <div className="w-2/6">
             <Accordion />
           </div>
-          <div className='w-4/6'>
+          <div className="w-4/6">
             <FormSteps />
           </div>
         </div>

@@ -13,7 +13,7 @@ export class FlickrAdapter {
     image: { id: string; apiData: any },
   ): IPhoto {
     const { photo } = image.apiData;
-
+    
     if (adapterMode === flickrPhotoAdapterMode.info) {
       return {
         id: image.id,
@@ -45,6 +45,12 @@ export class FlickrAdapter {
         countPhotos: newGallery.count_photos,
       };
     });
+  }
+
+  adaptFlickrGallery(apiData: any) {
+    const { photo } = apiData.photos;
+
+    return photo.map((photo) => photo.id);
   }
 }
 

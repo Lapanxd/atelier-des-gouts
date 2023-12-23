@@ -4,17 +4,8 @@ import { ISessionFormInitialState } from '../../core/models/session-form-initial
 export const sessionFormInitialState: ISessionFormInitialState = {
   clients: [],
   gallery: null,
-  formStep: 2,
-  duoImages: [
-    [
-      'https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630',
-      'https://img.freepik.com/photos-gratuite/peinture-lac-montagne-montagne-arriere-plan_188544-9126.jpg',
-    ],
-    [
-      'https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630',
-      'https://img.freepik.com/photos-gratuite/peinture-lac-montagne-montagne-arriere-plan_188544-9126.jpg',
-    ],
-  ],
+  formStep: 1,
+  duoImages: [],
 };
 
 export function sessionFormReducer(state, action) {
@@ -28,14 +19,13 @@ export function sessionFormReducer(state, action) {
 
     case SessionFormActions.setClient: {
       const id = state.clients.length + 1;
-      console.log('test');
       return {
         ...state,
-        client: state.clients.push({
+        clients: [...state.clients, {
           id,
           firstname: action.payload.firstname,
           lastname: action.payload.lastname,
-        }),
+        }],
       };
     }
 
@@ -43,6 +33,20 @@ export function sessionFormReducer(state, action) {
       return {
         ...state,
         gallery: action.payload,
+      };
+    }
+
+    case SessionFormActions.setGalleryPhotos: {
+      return {
+        ...state,
+        gallery: { ...state.gallery, photosId: action.payload },
+      };
+    }
+
+    case SessionFormActions.setStep: {
+      return {
+        ...state,
+        formStep: action.payload,
       };
     }
 
@@ -61,6 +65,17 @@ export function sessionFormReducer(state, action) {
       };
     }
 
+    case SessionFormActions.addDuo: {
+      const id = state.duoImages.length + 1;
+
+      return {
+        ...state,
+        duoImages: [...state.duoImages, {
+          id: id,
+          urls: action.payload,
+        }],
+      };
+    }
     default:
       return sessionFormInitialState;
   }

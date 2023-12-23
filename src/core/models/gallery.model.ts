@@ -6,6 +6,7 @@ export interface IGallery {
   url: string;
   primaryPhoto: IPhoto;
   countPhotos: number;
+  photosId?: string[];
   createdAt?: Date;
   updatedAt?: Date;
 }
