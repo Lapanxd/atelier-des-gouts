@@ -4,7 +4,7 @@ import { ISessionFormInitialState } from '../../core/models/session-form-initial
 export const sessionFormInitialState: ISessionFormInitialState = {
   clients: [],
   gallery: null,
-  formStep: 1,
+  formStep: 0,
   duoImages: [],
 };
 

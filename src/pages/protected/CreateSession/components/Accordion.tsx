@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { SessionFormContext } from '../../../../context/SessionForm/SessionFormContext.tsx';
+import { SessionFormContext } from '../../../../contexts/SessionForm/SessionFormContext.tsx';
 import ClientList from './ClientList.tsx';
 import DuoImages from './DuoImages.tsx';
 import { SessionFormActions } from '../../../../core/enums/session-form-actions.ts';

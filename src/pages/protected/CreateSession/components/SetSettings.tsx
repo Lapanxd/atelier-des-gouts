@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { SessionFormContext } from '../../../../context/SessionForm/SessionFormContext.tsx';
+import { SessionFormContext } from '../../../../contexts/SessionForm/SessionFormContext.tsx';
 import { flickrService } from '../../../../core/services/flickr.service.ts';
 import { SessionFormActions } from '../../../../core/enums/session-form-actions.ts';
 import { Nullable } from '../../../../core/types/nullable.ts';
+import { sessionService } from '../../../../core/services/session.service.ts';
+import { ICreateSession } from '../../../../core/models/create-session.model.ts';
 
 const SetSettings = () => {
   const { state, dispatch } = useContext(SessionFormContext);
@@ -44,19 +46,24 @@ const SetSettings = () => {
       payload: [firstImage.url, secondImage.url],
     });
 
-    console.log('images', images);
-
     const tmp = images;
     tmp.splice(firstImage.index, 1);
     tmp.splice(secondImage.index - 1, 1);
 
     setImages(tmp);
 
-
-    console.log(tmp);
-
     setFirstImage(null);
     setSecondImage(null);
+  }
+
+  async function createSession() {
+    const session: ICreateSession = {
+      title: state.gallery.title,
+      users: state.clients,
+      duoImages: { data: state.duoImages },
+    };
+
+    await sessionService.createSession(session);
   }
 
   return (
@@ -103,7 +110,7 @@ const SetSettings = () => {
         ))}
       </div>
 
-      <button className='btn btn-block mt-5' disabled={!state.duoImages.length}>
+      <button className='btn btn-block mt-5' disabled={!state.duoImages.length} onClick={createSession}>
         Créer la session
       </button>
     </div>

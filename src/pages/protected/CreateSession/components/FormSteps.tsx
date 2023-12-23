@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { SessionFormContext } from '../../../../context/SessionForm/SessionFormContext.tsx';
+import { SessionFormContext } from '../../../../contexts/SessionForm/SessionFormContext.tsx';
 import ClientForm from './ClientForm.tsx';
 import ImageSets from './ImageSets.tsx';
 import SetSettings from './SetSettings.tsx';

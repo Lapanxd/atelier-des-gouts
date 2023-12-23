@@ -4,10 +4,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { IGallery } from '../../../core/models/gallery.model.ts';
 import SessionFormProvider, {
   SessionFormContext,
-} from '../../../context/SessionForm/SessionFormContext.tsx';
+} from '../../../contexts/SessionForm/SessionFormContext.tsx';
 import { SessionFormActions } from '../../../core/enums/session-form-actions.ts';
 import Accordion from './components/Accordion.tsx';
 import FormSteps from './components/FormSteps.tsx';
+import { BackButton } from '../../../shared/components/BackButton.tsx';
 
 const CreateSession = () => {
   const [step, setStep] = useState<number>(0);
@@ -36,13 +37,14 @@ const CreateSession = () => {
   return (
     <>
       <Header />
-      <h1 className="font-bold text-3xl mt-10 mb-10">Créer une nouvelle session</h1>
+      <BackButton />
+      <h1 className='font-bold text-3xl mt-10 mb-10'>Créer une nouvelle session</h1>
       <SessionFormProvider>
-        <div className="flex gap-10">
-          <div className="w-2/6">
+        <div className='flex gap-10'>
+          <div className='w-2/6'>
             <Accordion />
           </div>
-          <div className="w-4/6">
+          <div className='w-4/6'>
             <FormSteps />
           </div>
         </div>
