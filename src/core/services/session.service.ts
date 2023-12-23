@@ -17,7 +17,7 @@ export class SessionService {
       .post('http://localhost:1337/api/sessions', session, {
         headers: {
           'Authorization': `Bearer ${this.getToken}`,
-        },
+        }, // todo
       })
       .then((response: ApiResponse<ISession>) => {
         // @todo
